@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.udea</groupId>
-	<artifactId>lab4v</artifactId>
+	<artifactId>lab4op</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lab4v</name>
 	<description>Demo project for Spring Boot</description>

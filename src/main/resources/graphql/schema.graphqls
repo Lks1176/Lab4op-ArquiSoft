@@ -1,0 +1,50 @@
+type Credit {
+    id: ID!
+    creditType: String!
+    amount: String!
+    interestRate: String!
+    termMonths: Int!
+    status: String!
+    createdAt: String!
+    approvedAt: String
+    applications: [CreditApplication!]!
+}
+
+type CreditApplication {
+    id: ID!
+    clientName: String!
+    clientId: String!
+    email: String!
+    phoneNumber: String!
+    monthlyIncome: String!
+    applicationCode: String!
+    applicationDate: String!
+    credit: Credit!
+}
+
+type Query {
+    allCredits: [Credit]
+    creditById(id: ID!): Credit
+    creditsByCategory(creditType: String!): [Credit]
+    applicationByCode(applicationCode: String!): CreditApplication
+}
+
+type Mutation {
+    createCredit(
+        creditType: String!
+        amount: String!
+        interestRate: String!
+        termMonths: Int!
+    ): Credit
+
+    updateCreditStatus(id: ID!, status: String!): Credit
+
+    applyForCredit(
+        creditId: ID!
+        clientName: String!
+        clientId: String!
+        email: String!
+        phoneNumber: String!
+        monthlyIncome: String!
+    ): CreditApplication
+}
